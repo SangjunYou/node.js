@@ -8,15 +8,15 @@ loginBtn.addEventListener("click", login);
 
 function login() {
     const req = {
-        id : id.value,
-        psword : psword.value
+        id: id.value,
+        psword: psword.value,
     };
-
+    
     fetch("/login", {
-        method : "POST",
-        headers : {
+        method: "POST",
+        headers: {
             "Content-Type":"application/json"
         },
-        body : JSON.stringify(req)
-    })
-}
+        body: JSON.stringify(req)
+    });
+};
