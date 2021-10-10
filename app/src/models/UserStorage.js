@@ -1,8 +1,10 @@
 "use strict"
 
+const { use } = require("../routes/home");
+
 class UserStorage {
     static #users = {
-     id : ["home5635", "유상준", "정현진"],
+     id : ["home5635", "이명로", "정현진"],
      psword : ["12344", "123", "black"],
      name: ["홍길동", "강호동", "이승기"],
     };
@@ -17,6 +19,17 @@ class UserStorage {
         }, {});
         return newUsers;
     } 
+
+    static getUsersInfo(id) {
+        const users = this.#users
+        const idx = users.id.indexOf(id);
+        const userInfo = Object.keys(users).reduce((newUsers, info) => {
+            newUsers[info] = users[info][idx];
+            return newUsers;
+        }, {});
+
+        return userInfo;
+    }
 }
 
 module.exports = UserStorage;
