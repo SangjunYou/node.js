@@ -1,6 +1,6 @@
 "use strict"
 
-const { use } = require("../routes/home");
+// const { users } = require("../routes/home");
 
 class UserStorage {
     static #users = {
